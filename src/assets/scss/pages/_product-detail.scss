@@ -1,0 +1,13 @@
+.product{
+  @include pxRem(margin-top, 40);
+  &-img{
+    @include pxRem(width, 600);
+  }
+  
+  &-info{
+    h4{
+      color: map-get($colors, txt-gray-dark);
+      @include pxRem(margin, 10);
+    }
+  }
+}
