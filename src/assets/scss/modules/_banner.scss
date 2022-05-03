@@ -1,0 +1,11 @@
+.banner {
+  @include pxRem(height, 300);
+  width: 100%;
+  background: url("https://cdn.mos.cms.futurecdn.net/rwow8CCG3C3GrqHGiK8qcJ.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: map-get($colors, white)
+  }
+}
