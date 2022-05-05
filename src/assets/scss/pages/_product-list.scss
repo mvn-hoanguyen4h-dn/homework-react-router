@@ -7,9 +7,17 @@
   @include pxRem (margin-bottom, 20);
   border: 1px solid map-get($colors, border-gray);
   text-align: center;
+  position: relative;
   img{
     @include pxRem (height, 300);
     width: 100%;
+  }
+  span{
+    @include pxRem (right, 10);
+    @include pxRem (top, 10);
+    @include pxRem (font-size, 20);
+    color: map-get($colors, white);
+    position: absolute;
   }
   h5{
     @include pxRem (margin, 10 0);
@@ -24,4 +32,7 @@
     border: none;
     cursor: pointer;
   }
+  .active{
+      color: red;
+    }
 }

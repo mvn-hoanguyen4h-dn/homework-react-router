@@ -6,8 +6,12 @@ import {
   FaSignInAlt,
 } from "react-icons/fa";
 import logo from "../../../assets/images/logo192.png";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const favs = useSelector((state) => state.fav.value);
+  console.log(favs);
+
   return (
     <div className="page-header">
       <div className="container">
@@ -38,6 +42,9 @@ function Header() {
             <li className="nav-links-item">
               <NavLink to="/account" activeClassName="active">
                 <FaHeart />
+                {!!favs.length && (
+                  <span className="fav-number">{favs.length}</span>
+                )}
               </NavLink>
             </li>
             <li className="nav-links-item">
