@@ -1,0 +1,31 @@
+.page-header {
+  @include pxRem(padding, 10);
+  background: map-get($colors, black);
+  text-align: center;
+  .nav-links-item{
+    @include pxRem(font-size, 20);
+    position: relative;
+    &:not(:first-child){
+      @include pxRem(margin-left, 20);
+    }
+    a{
+      color: white;
+    }
+    img{
+      @include pxRem(width, 50);
+      @include pxRem(height, 50)
+    }
+    .fav-number{
+      @include pxRem(top, -8);
+      @include pxRem(left, -6);
+      @include pxRem(width, 18);
+      @include pxRem(height, 18);
+      position: absolute;
+      background-color: red;
+      border-radius: 50%;
+    }
+  }
+  .active{
+    color: green;
+  }
+}
