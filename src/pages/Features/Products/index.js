@@ -3,21 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { toggle } from "../../../store/favSlice";
-import Banner from "../../../components/modules/Banner";
+import { apiProductGetList } from "../../../api/product/product.api";
 
 function Products() {
   const dispatch = useDispatch();
   const [productList, setProductList] = useState([]);
   const favs = useSelector((state) => state.fav.value);
-  console.log(favs);
 
   useEffect(() => {
-    const fetchData = () => {
-      fetch("https://fakestoreapi.com/products")
-        .then((response) => response.json())
-        .then((data) => setProductList(data));
-    };
-    fetchData();
+    apiProductGetList().then((result) => {
+      setProductList(result.data);
+    });
   }, []);
 
   function handleFav(e, id) {
@@ -27,7 +23,6 @@ function Products() {
 
   return (
     <>
-      <Banner />
       <div className="container">
         <h2 className="products-title">Product Latest</h2>
         <ul className="row">
